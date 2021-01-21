@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>UBAH DATA NASABAH</title>
+</head>
+<body style="margin: 80px">
+<h1 class="heading" style="text-align: center; padding: auto"><b>UBAH DATA NASABAH</b></h1>
+
+<form th:action="@{/}" method="POST">
+    <div class="form-group">
+        <label for="idKaryawan">ID NASABAH</label>
+        <input type="text" class="form-control" id="idKaryawan" placeholder="masukkan id" name="idKaryawan"
+               th:value="${karyawan.idKaryawan}" readonly>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="namaKaryawan">NAMA NASABAH</label>
+        <input type="text" class="form-control" id="namaKaryawan" placeholder="masukkan nama" name="namaKaryawan"
+               th:value="${karyawan.namaKaryawan}">
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for="alamatKaryawan">ALAMAT NASABAH</label>
+        <input type="text" class="form-control" id="alamatKaryawan" placeholder="masukkan alamat" name="alamatKaryawan"
+               th:value="${karyawan.alamatKaryawan}">
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <br>
+    <button type="submit" name="submit" id="kirim" class="btn btn-danger">Kirim !</button>
+</form>
+<br>
+<a th:href="@{/}">
+    <button type="button" name="button" id="kembali" class="btn btn-danger">Kembali</button>
+</a>
+</body>
+</html>
